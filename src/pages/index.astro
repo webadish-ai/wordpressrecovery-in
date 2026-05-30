@@ -1,0 +1,39 @@
+---
+import Base from '@/layouts/Base.astro';
+import Nav from '@/components/Nav.astro';
+import Hero from '@/components/Hero.astro';
+import TrustBar from '@/components/TrustBar.astro';
+import Symptoms from '@/components/Symptoms.astro';
+import Services from '@/components/Services.astro';
+import Process from '@/components/Process.astro';
+import Pricing from '@/components/Pricing.astro';
+import WhyChooseUs from '@/components/WhyChooseUs.astro';
+import Trust from '@/components/Trust.astro';
+import FAQ from '@/components/FAQ.astro';
+import Contact from '@/components/Contact.astro';
+import Footer from '@/components/Footer.astro';
+import '@/styles/global.css';
+---
+
+<Base
+  title="WordPress Hacked? Expert Recovery India | WordPressRecovery.in"
+  description="WordPress site hacked, blacklisted by Google, redirecting to spam, or showing critical errors? Expert emergency malware removal and full recovery for Indian businesses. Free diagnosis. Same-day service available."
+>
+  <Nav />
+  <Hero />
+  <TrustBar />
+  <Symptoms />
+  <Services />
+  <Process />
+  <Pricing />
+  <WhyChooseUs />
+  <Trust />
+  <FAQ />
+  <Contact />
+  <Footer />
+</Base>
+
+<script>
+  import { initReveal } from '@/lib/reveal';
+  initReveal();
+</script>
