@@ -11,22 +11,30 @@
 Focus on "Emergency" and "Help" keywords where users are in a crisis.
 
 ### Group A: Emergency Recovery
-- "hacked wordpress recovery india"
-- "emergency wordpress help india"
-- "wordpress site hacked fix"
-- "malware removal service for wordpress india"
-- "expert wordpress hack recovery"
+"hacked wordpress recovery india"
+"emergency wordpress help india"
+"wordpress site hacked fix"
+"malware removal service for wordpress india"
+"expert wordpress hack recovery"
+"wordpress website recovery"
+"wordpress compromised"
 
 ### Group B: Google Blacklist / Warning
-- "fix google blacklist wordpress india"
-- "remove malware warning from site"
-- "google says my site is hacked help"
-- "deceptive site ahead fix wordpress"
+"fix google blacklist wordpress india"
+"remove malware warning from site"
+"google says my site is hacked help"
+"deceptive site ahead fix wordpress"
 
 ### Group C: Specific Symptoms
-- `"wordpress site redirecting to spam"`
-- `"wordpress admin locked hacked"`
-- `"wordpress hosting suspended malware"`
+"wordpress site redirecting to spam"
+"wordpress admin locked hacked"
+"wordpress hosting suspended malware"
+"wordpress keeps getting hacked"
+"wordpress hacked redirect"
+"wordpress redirect malware"
+"my wordpress site was hacked"
+"wordpress blog hacked"
+
 
 ## 4. Negative Keywords (CRITICAL - Add these to prevent waste)
 Add these as "Campaign Level" negatives:
