@@ -3,8 +3,9 @@ interface Props {
   title: string;
   description: string;
   canonical?: string;
+  noindex?: boolean;
 }
-const { title, description, canonical = 'https://www.wordpressrecovery.in/' } = Astro.props;
+const { title, description, canonical = new URL(Astro.url.pathname, 'https://www.wordpressrecovery.in').href, noindex = false } = Astro.props;
 import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
 const gaId = import.meta.env.PUBLIC_GA_ID;
 ---
@@ -20,7 +21,7 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />

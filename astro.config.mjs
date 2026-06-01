@@ -9,6 +9,8 @@ export default defineConfig({
   adapter: vercel(),
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/thank-you'),
+    }),
   ],
 });
