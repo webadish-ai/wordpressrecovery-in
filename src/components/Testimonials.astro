@@ -1,0 +1,119 @@
+---
+// Real client outcomes + reviews. Source: WebAdish LLP client work (webadish.com).
+const cases = [
+  {
+    tag: 'Hacked eCommerce — Incident Response',
+    title: 'Compromised store cleaned and delisted — no reinfection',
+    client: 'Verofax — eCommerce / technology',
+    problem: 'Site redirecting visitors to spam pages, Google warning live, admin partially compromised. Earlier plugin-based cleanups had failed and reinfection kept returning.',
+    metrics: [
+      { value: '<48h', label: 'Full recovery' },
+      { value: '0', label: 'Reinfections' },
+      { value: '48h', label: 'Google warning cleared' },
+    ],
+    href: 'https://webadish.com/case-studies/verofax',
+  },
+  {
+    tag: 'Security Hardening + Rebuild',
+    title: 'Dealership site secured, hardened and rebuilt',
+    client: 'Shivam Autozone — automotive dealership',
+    problem: 'Outdated, slow site with weak security and poor trust signals, hurting lead quality and exposing the business to compromise.',
+    metrics: [
+      { value: '60%', label: 'Faster load' },
+      { value: 'Full', label: 'Mobile-ready' },
+      { value: 'Higher', label: 'Lead quality' },
+    ],
+    href: 'https://webadish.com/case-studies/shivamautozone',
+  },
+  {
+    tag: 'B2B Build + Ongoing Protection',
+    title: 'Enterprise B2B site with built-in protection',
+    client: 'Crystal Group — B2B logistics / cold chain',
+    problem: 'Weak credibility and poor structure meant enterprise buyers were not converting. Needed a secure, professional build with ongoing maintenance.',
+    metrics: [
+      { value: 'Stronger', label: 'Buyer confidence' },
+      { value: 'Built-in', label: 'SEO readiness' },
+      { value: 'Ongoing', label: 'Protection' },
+    ],
+    href: 'https://webadish.com/case-studies/crystalgroup',
+  },
+];
+
+const reviews = [
+  {
+    name: 'Vashishtha Luxury Fashion',
+    role: 'Fashion brand · 3+ years',
+    quote: 'Webadish is undoubtedly the best service provider in today’s digital industry. From the last 3 years we are extremely happy with their prompt and timely services.',
+  },
+  {
+    name: 'Shivam Autozone',
+    role: 'Automotive dealership',
+    quote: 'We are really impressed with the amazing website. Such a great company to work with and highly recommended to everyone.',
+  },
+  {
+    name: 'Triton',
+    role: 'eCommerce store',
+    quote: 'Just wanted to thank you for helping us with the website. You did an amazing job guiding me through the whole process.',
+  },
+];
+---
+<section class="py-20 px-4 bg-gray-50" id="results">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-14" data-reveal>
+      <p class="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-3">Real client work</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Real Recoveries. Verifiable Clients.</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">These are real WebAdish LLP clients — not stock logos. Each case below links to the full written case study you can read and verify.</p>
+    </div>
+
+    <!-- Case study cards -->
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      {cases.map((c, i) => (
+        <a
+          href={c.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex flex-col bg-white border border-gray-200 rounded-2xl p-6 hover:border-blue-300 hover:shadow-lg transition-all duration-200"
+          data-reveal
+          data-delay={String(Math.min(i * 100, 200))}
+        >
+          <span class="inline-flex self-start items-center gap-1.5 bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">{c.tag}</span>
+          <h3 class="font-bold text-slate-900 text-lg leading-snug mb-2">{c.title}</h3>
+          <p class="text-xs font-semibold text-gray-500 mb-3">{c.client}</p>
+          <p class="text-sm text-gray-600 leading-relaxed mb-5 flex-grow">{c.problem}</p>
+          <div class="grid grid-cols-3 gap-2 mb-4">
+            {c.metrics.map((m) => (
+              <div class="bg-green-50 border border-green-100 rounded-xl py-3 text-center">
+                <div class="text-lg font-extrabold text-green-700 leading-none">{m.value}</div>
+                <div class="text-[10px] font-medium uppercase tracking-wide text-green-600 mt-1">{m.label}</div>
+              </div>
+            ))}
+          </div>
+          <span class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">
+            Read the full case study
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Reviews -->
+    <div class="grid md:grid-cols-3 gap-6">
+      {reviews.map((r, i) => (
+        <div class="bg-white rounded-2xl p-7 border border-gray-200 flex flex-col" data-reveal data-delay={String(Math.min(i * 100, 200))}>
+          <div class="flex gap-0.5 text-yellow-400 mb-5" aria-label="5 out of 5 stars">
+            {[...Array(5)].map(() => (
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            ))}
+          </div>
+          <p class="text-gray-700 italic leading-relaxed mb-6 flex-grow">&ldquo;{r.quote}&rdquo;</p>
+          <div>
+            <p class="font-bold text-slate-900 text-sm">{r.name}</p>
+            <p class="text-xs text-gray-500">{r.role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -5,6 +5,7 @@ const services = [
     desc: 'Manual extraction of infected files, backdoors, obfuscated code, and malicious database injections. Complete file and DB scan.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>`,
     featured: false,
+    href: '/wordpress-malware-removal-india/',
   },
   {
     title: 'Hacked WordPress Recovery',
@@ -17,12 +18,14 @@ const services = [
     desc: 'Remove your site from Google Safe Browsing, McAfee, Norton, and hosting blacklists. Reconsideration requests handled.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
     featured: false,
+    href: '/google-blacklist-removal-india/',
   },
   {
     title: 'Redirect Virus Removal',
     desc: 'Eliminate .htaccess, JavaScript, and database-level redirects sending visitors to spam, pharma, casino, or competitor sites.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>`,
     featured: false,
+    href: '/wordpress-redirect-virus-removal-india/',
   },
   {
     title: 'Hosting Suspension Recovery',
@@ -76,6 +79,12 @@ const services = [
           </div>
           <h3 class={`font-bold mb-2 text-[15px] leading-snug ${s.featured ? 'text-white' : 'text-slate-900'}`}>{s.title}</h3>
           <p class={`text-sm leading-relaxed ${s.featured ? 'text-blue-100' : 'text-gray-600'}`}>{s.desc}</p>
+          {s.href && (
+            <a href={s.href} class="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-blue-600 hover:gap-2 transition-all">
+              Learn more
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          )}
           {s.featured && (
             <span class="inline-block mt-3 bg-blue-600 text-blue-100 text-xs font-semibold px-3 py-1 rounded-full">Most Popular</span>
           )}

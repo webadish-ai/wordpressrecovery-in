@@ -47,19 +47,8 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content="https://www.wordpressrecovery.in/og-image.png" />
 
-  <!-- Fonts — non-blocking load to avoid render delay on mobile -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-    media="print"
-    onload="this.media='all'"
-  />
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  </noscript>
+  <!-- Fonts are self-hosted via @fontsource-variable (imported in global.css) —
+       no third-party font request on the critical path. -->
 
   <!-- JSON-LD LocalBusiness -->
   <script type="application/ld+json">

@@ -1,3 +1,8 @@
+/* Self-hosted fonts — served from our own origin, no render-blocking third-party
+   request on the critical path. `wght.css` = the variable weight axis only. */
+@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource-variable/plus-jakarta-sans/wght.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
