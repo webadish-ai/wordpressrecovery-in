@@ -48,7 +48,7 @@ const signs = [
   canonical="https://www.wordpressrecovery.in/japanese-keyword-hack-removal-india/"
 >
 
-  <script type="application/ld+json" slot="head">{JSON.stringify({
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Japanese Keyword Hack Removal India",
@@ -67,9 +67,9 @@ const signs = [
       "description": "Starting price for Japanese keyword hack removal"
     },
     "serviceType": "Japanese Keyword Hack Removal"
-  })}</script>
+  })} />
 
-  <script type="application/ld+json" slot="head">{JSON.stringify({
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqs.map(f => ({
@@ -77,7 +77,7 @@ const signs = [
       "name": f.q,
       "acceptedAnswer": { "@type": "Answer", "text": f.a }
     }))
-  })}</script>
+  })} />
 
   <Nav />
 

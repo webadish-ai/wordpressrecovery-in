@@ -20,7 +20,7 @@ const checks = [
   canonical="https://www.wordpressrecovery.in/wordpress-security-scanner/"
 >
 
-  <script type="application/ld+json" slot="head">{JSON.stringify({
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "WordPress Security Scanner",
@@ -33,7 +33,7 @@ const checks = [
       "name": "WordPressRecovery.in",
       "url": "https://www.wordpressrecovery.in"
     }
-  })}</script>
+  })} />
 
   <Nav />
 

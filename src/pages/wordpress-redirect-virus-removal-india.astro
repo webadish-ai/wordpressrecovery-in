@@ -48,7 +48,7 @@ const hideouts = [
   canonical="https://www.wordpressrecovery.in/wordpress-redirect-virus-removal-india/"
 >
 
-  <script type="application/ld+json" slot="head">{JSON.stringify({
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "WordPress Redirect Virus Removal India",
@@ -67,9 +67,9 @@ const hideouts = [
       "description": "Starting price for redirect virus removal and hardening"
     },
     "serviceType": "WordPress Redirect Virus Removal"
-  })}</script>
+  })} />
 
-  <script type="application/ld+json" slot="head">{JSON.stringify({
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqs.map(f => ({
@@ -77,7 +77,7 @@ const hideouts = [
       "name": f.q,
       "acceptedAnswer": { "@type": "Answer", "text": f.a }
     }))
-  })}</script>
+  })} />
 
   <Nav />
 
