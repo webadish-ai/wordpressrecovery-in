@@ -5,6 +5,7 @@ import { runScan, normaliseTarget, type ScanResult, type Finding } from '@/lib/s
 export const prerender = false;
 
 const TEAM_INBOX = 'snehal@webadish.com';
+const OWNER_BCC = 'dilipparmar@gmail.com';
 const FROM = 'WordPressRecovery.in <help@webadish.com>';
 
 export const POST: APIRoute = async ({ request }) => {
@@ -47,6 +48,7 @@ export const POST: APIRoute = async ({ request }) => {
     .send({
       from: FROM,
       to: [TEAM_INBOX],
+      bcc: [OWNER_BCC],
       reply_to: email,
       subject: `${hot ? '🔴 HOT LEAD' : 'Scan lead'} – ${result.finalUrl} (${verdictLabel(result)})`,
       html: teamEmail(result, email, phone),
