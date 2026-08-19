@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: 'https://www.wordpressrecovery.in',
+  site: 'https://www.hackedwebsiterecovery.in',
   output: 'server',
   adapter: vercel(),
   integrations: [
