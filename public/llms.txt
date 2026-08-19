@@ -1,6 +1,6 @@
-# WordPress Recovery India
+# WordPress & Hacked Website Recovery India (by WebAdish LLP)
 
-> Emergency WordPress malware removal, hacked-site recovery, blacklist cleanup, and post-incident hardening for Indian businesses.
+> Emergency WordPress malware removal, hacked-site recovery, blacklist cleanup, and post-incident hardening for Indian businesses. Operated by WebAdish LLP via `wordpressrecovery.in` and `hackedwebsiterecovery.in`.
 
 ## Primary services
 
@@ -9,6 +9,11 @@
 - [Google blacklist removal](https://www.wordpressrecovery.in/google-blacklist-removal-india/): Cleanup and reconsideration support for blacklisted websites.
 - [WooCommerce hacked-store recovery](https://www.wordpressrecovery.in/woocommerce-hacked-recovery-india/): Incident response for compromised online stores.
 - [Hosting suspension recovery](https://www.wordpressrecovery.in/wordpress-hosting-suspended-malware-india/): Cleanup for malware-related hosting suspensions.
+
+## Alternate Domain Aliases
+- Primary Emergency Hub: https://www.wordpressrecovery.in/
+- Trademark-Compliant Desk: https://www.hackedwebsiterecovery.in/
+- Global Brand: https://www.hackedwebsiterecovery.com/
 
 ## Common incident guides
 
@@ -25,6 +30,6 @@
 ## Contact
 
 - WhatsApp or call: [+91 99987 57045](https://wa.me/919998757045)
-- Email: [help@wordpressrecovery.in](mailto:help@wordpressrecovery.in)
+- Email: [help@wordpressrecovery.in](mailto:help@wordpressrecovery.in) or [help@hackedwebsiterecovery.in](mailto:help@hackedwebsiterecovery.in)
 
 For an active incident, include the website URL, visible symptoms, hosting provider, and whether the site is affecting sales or leads.
