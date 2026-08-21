@@ -5,7 +5,7 @@ interface Props {
   canonical?: string;
   noindex?: boolean;
 }
-const { title, description, canonical = new URL(Astro.url.pathname, 'https://www.wordpressrecovery.in').href, noindex = false } = Astro.props;
+const { title, description, canonical = new URL(Astro.url.pathname, Astro.url.origin).href, noindex = false } = Astro.props;
 import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
 const gaId = import.meta.env.PUBLIC_GA_ID;
 ---
