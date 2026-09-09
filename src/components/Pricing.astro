@@ -1,11 +1,20 @@
 ---
-const india = [
+type Tier = {
+  label: string;
+  price: string;
+  sub?: string;
+  desc: string;
+  featured?: boolean;
+  blue?: boolean;
+  href?: string;
+};
+const india: Tier[] = [
   { label: 'Diagnosis', price: 'Free', sub: 'or ₹1,999 for deep manual review', desc: 'Initial assessment of infection type and scope', featured: false },
   { label: 'Malware Cleanup', price: '₹14,999+', sub: 'Starting price', desc: 'Malware removal, cleanup, and basic hardening', featured: false },
   { label: 'Full Recovery', price: '₹29,999+', sub: 'Starting price', desc: 'Full hacked site recovery for business-critical websites', featured: true },
   { label: 'Emergency Same-Day', price: '₹49,999+', sub: 'Starting price', desc: 'Priority same-day recovery with dedicated attention', featured: false },
   { label: 'WooCommerce / Critical', price: '₹75,000+', sub: 'Starting price', desc: 'For stores, lead-heavy sites, and complex hacked environments', featured: false },
-  { label: 'Monthly Protection', price: '₹9,999/mo+', sub: 'Per month', desc: 'Monitoring, backups, updates, and security', featured: false, blue: true },
+  { label: 'Monthly Protection', price: 'From ₹9,999/mo', sub: 'Lite · Pro · Critical', desc: 'Monitoring, backups, updates, and security — see the plans below', featured: false, blue: true, href: '#protection' },
 ];
 ---
 <section class="py-20 px-4 bg-white" id="pricing">
@@ -22,25 +31,31 @@ const india = [
         <div class="h-px bg-gray-200 flex-1"></div>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-        {india.map((tier) => (
-          <div class={`rounded-2xl p-6 text-center transition-all duration-200 relative ${
-            tier.featured
-              ? 'border-2 border-blue-600 shadow-xl shadow-blue-100'
-              : tier.blue
-              ? 'border border-blue-200 bg-blue-50'
-              : 'border border-gray-200 hover:border-blue-200 hover:shadow-sm'
-          }`}>
-            {tier.featured && (
-              <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
-                MOST REQUESTED
-              </div>
-            )}
-            <div class={`text-sm font-semibold mb-2 ${tier.featured ? 'text-blue-600' : tier.blue ? 'text-blue-700' : 'text-gray-500'}`}>{tier.label}</div>
-            <div class="text-2xl font-extrabold text-slate-900 mb-1">{tier.price}</div>
-            {tier.sub && <div class="text-xs text-gray-400 mb-3">{tier.sub}</div>}
-            <p class="text-xs text-gray-500 leading-relaxed">{tier.desc}</p>
-          </div>
-        ))}
+        {india.map((tier) => {
+          const Tag = tier.href ? 'a' : 'div';
+          return (
+            <Tag
+              href={tier.href}
+              class={`block rounded-2xl p-6 text-center transition-all duration-200 relative ${
+                tier.featured
+                  ? 'border-2 border-blue-600 shadow-xl shadow-blue-100'
+                  : tier.blue
+                  ? 'border border-blue-200 bg-blue-50 hover:border-blue-300 hover:shadow-sm'
+                  : 'border border-gray-200 hover:border-blue-200 hover:shadow-sm'
+              }`}
+            >
+              {tier.featured && (
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
+                  MOST REQUESTED
+                </div>
+              )}
+              <div class={`text-sm font-semibold mb-2 ${tier.featured ? 'text-blue-600' : tier.blue ? 'text-blue-700' : 'text-gray-500'}`}>{tier.label}</div>
+              <div class="text-2xl font-extrabold text-slate-900 mb-1">{tier.price}</div>
+              {tier.sub && <div class="text-xs text-gray-400 mb-3">{tier.sub}</div>}
+              <p class="text-xs text-gray-500 leading-relaxed">{tier.desc}</p>
+            </Tag>
+          );
+        })}
       </div>
     </div>
 

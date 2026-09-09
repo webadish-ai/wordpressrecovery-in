@@ -15,6 +15,10 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Marks that JS is available before first paint, so scroll-reveal styles only
+       hide content when the reveal script can actually bring it back. -->
+  <script is:inline>document.documentElement.classList.add('js')</script>
+
   {gaId && <GoogleAnalytics id={gaId} />}
 
   <!-- Primary SEO -->
@@ -66,8 +70,8 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
     "priceRange": "₹14,999 – ₹75,000+",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "94",
+      "ratingValue": "5.0",
+      "reviewCount": "6",
       "bestRating": "5",
       "worstRating": "1"
     },
