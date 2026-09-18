@@ -99,3 +99,21 @@ When creating a new conversion action, Google might scan your account and sugges
 - WebAdish LLP parent-brand logo added to nav, hero, and footer.
 - `.vercelignore` excludes local `.env` secrets from deployments.
 - Use the live `https://www.wordpressrecovery.in/` URL once production is promoted.
+
+## 7. Lesson Learned (2026-09-18): EXACT match only for live campaigns
+
+Phrase and broad match caused real, meaningful wasted spend via Google's "close variant" query expansion pulling in wrong-intent traffic. On the live "Wordpress-Recovery" campaign (account 3337195111), phrase-match keywords like `wordpress hacked` were matching to queries like "wp hacked help" — where "wp" was being searched as shorthand for **WhatsApp**, not WordPress, by people trying to hack someone's WhatsApp account. This wasn't a one-off: the same `wp hack*` pattern also wasted ~₹910 on the older, separate "Hacked Site Recovery India" campaign. Combined with a garbled/adware-artifact query ("https www google com gws_rd ssl remove"), these two patterns alone burned over ₹2,400 in a single month with zero conversions.
+
+**Policy: use EXACT match for every revenue-driving keyword, on every campaign.** Phrase/broad match is too loose for this niche — it reliably pulls in adjacent-but-wrong intent (WhatsApp/Facebook "hacking" searches, DIY security-tool researchers, browser-error lookups). Only use phrase/broad temporarily, during deliberate keyword-discovery via the Search Terms report, then convert winners to exact and pause the loose version.
+
+Also expect sporadic one-off junk from browser-hijack/adware-style queries regardless of match type (garbled URL-like strings, random domains like "goaserv.com," "adspredictiv.com") — these need ongoing negative-keyword cleanup as they surface; there's no single fix that stops them permanently.
+
+## 8. Lesson Learned (2026-09-18): Don't let low-friction clicks be a bidding goal
+
+The "WhatsApp Click - India" conversion action fires on any click of the WhatsApp button — not on an actual qualified reply or conversation. It was set as a primary/biddable conversion goal under Maximize Conversions bidding, so Smart Bidding treated a bare click (including from clearly wrong-intent visitors who open the chat and never reply) as equivalent to a real lead — likely reinforcing the WhatsApp-confusion traffic problem above.
+
+**Fix applied**: excluded the CONTACT/WEBSITE conversion goal from bidding at the campaign level (`updateConversionGoalBiddability`, scope=CAMPAIGN, category=CONTACT, origin=WEBSITE, biddable=false) for the Wordpress-Recovery campaign. WhatsApp clicks still show up in reporting but no longer influence what the algorithm optimizes toward. **Apply the same exclusion on any other campaign that counts a low-friction click (WhatsApp, chat widget, phone-number click) as a bidding goal** — a real form submission is a far better signal than a bare click on a chat link.
+
+## 9. Operational note: verify mutations persisted, don't trust "success" alone
+
+A negative keyword added via the Ads API reported success but wasn't actually present the next day — another agent/process with write access to this account had removed it shortly after. If more than one tool or session can write to this account, always read back a critical change (negative keywords, budget, bidding goals) before relying on it, and don't assume a "success" response means the change survived.
